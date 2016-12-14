@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="drumkit.css">
+</head>
+
+<body>
+
+    <section class="keys">
+        <div data-key="65" class="key">
+            <kbd>A</kbd>
+            <span class="sound">clap</span>
+        </div>
+         <div data-key="83" class="key">
+            <kbd>S</kbd>
+            <span class="sound">boom</span>
+        </div>
+         <div data-key="68" class="key">
+            <kbd>D</kbd>
+            <span class="sound">hihat</span>
+        </div>
+           <div data-key="70" class="key">
+            <kbd>F</kbd>
+            <span class="sound">kick</span>
+        </div>
+         <div data-key="71" class="key">
+            <kbd>G</kbd>
+            <span class="sound">openhat</span>
+        </div>
+         <div data-key="72" class="key">
+            <kbd>H</kbd>
+            <span class="sound">ride</span>
+        </div>
+         <div data-key="74" class="key">
+            <kbd>J</kbd>
+            <span class="sound">snare</span>
+        </div>
+         <div data-key="75" class="key">
+            <kbd>K</kbd>
+            <span class="sound">tink</span>
+        </div>
+         <div data-key="76" class="key">
+            <kbd>L</kbd>
+            <span class="sound">tom</span>
+        </div>
+    </section>
+
+    <!--using data-attributes to hook-up some keyboard keys with the audio files-->
+    <audio data-key="65" src="wavs/clap.wav"></audio>
+    <audio data-key="83" src="wavs/boom.wav"></audio>
+    <audio data-key="68" src="wavs/hihat.wav"></audio>
+    <audio data-key="70" src="wavs/kick.wav"></audio>
+    <audio data-key="71" src="wavs/openhat.wav"></audio>
+    <audio data-key="72" src="wavs/ride.wav"></audio>
+    <audio data-key="74" src="wavs/snare.wav"></audio>
+    <audio data-key="75" src="wavs/tink.wav"></audio>
+    <audio data-key="76" src="wavs/tom.wav"></audio>
+
+    <script src="drumkit.js"></script>
+
+
+</body>
+
+</html>
