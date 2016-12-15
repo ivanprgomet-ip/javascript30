@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /*display: flex;*/
+}
+.background-image{
+     background-image: url('http://image.desk7.net/Landscape%20Wallpapers/6031_1280x800.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;    
+
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+
+    height: 100%;
+    width: 100%;    
+}
+.clock-body{
+    position: absolute;
+    top: 0vh;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.4); /*thin darkening layer*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock-face{
+     border: 15px solid lightblue; 
+    z-index: 999;
+    border-radius: 50%/50%;/*make clockface round*/
+    width: 250px;
+    height: 250px;
+}
+
+
