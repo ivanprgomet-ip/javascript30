@@ -32,11 +32,39 @@ body{
     align-items: center;
 }
 .clock-face{
-     border: 15px solid lightblue; 
+    border: 10px solid rgb(255, 255, 255);
     z-index: 999;
     border-radius: 50%/50%;/*make clockface round*/
     width: 250px;
     height: 250px;
+
+    position: relative; /*to clock-hand*/
 }
 
+.clock-hand{
+    position: absolute;/*inside of clock-face*/
+    width:50%;
+    /*height:5px;*/
+    top:50%;
+    background:black;
+    /*transform-origin: 100%; moves the hands into place*/
+}
 
+.sec-hand{
+   height: 5px;
+    width: 50%;
+    transform: rotate(90deg); /*puts the hand in 12 o clock start position*/
+    transform-origin: 100%; /*moves the complete axis to middle of clock-face*/
+}
+
+.min-hand {
+    height: 5px;
+    width: 45%;
+    transform: translateX(15%);
+}
+.hour-hand {
+    height: 7px;
+    width: 40%;
+    transform: translateX(25%);
+    background-color: black;
+}
