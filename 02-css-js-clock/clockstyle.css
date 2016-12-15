@@ -5,7 +5,7 @@ body{
     /*display: flex;*/
 }
 .background-image{
-     background-image: url('http://image.desk7.net/Landscape%20Wallpapers/6031_1280x800.jpg');
+    background-image: url('http://image.desk7.net/Landscape%20Wallpapers/6031_1280x800.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;    
@@ -32,7 +32,7 @@ body{
     align-items: center;
 }
 .clock-face{
-    border: 10px solid rgb(255, 255, 255);
+    border: 20px solid rgb(255, 255, 255);
     z-index: 999;
     border-radius: 50%/50%;/*make clockface round*/
     width: 250px;
@@ -40,31 +40,16 @@ body{
 
     position: relative; /*to clock-hand*/
 }
-
 .clock-hand{
     position: absolute;/*inside of clock-face*/
     width:50%;
-    /*height:5px;*/
     top:50%;
-    background:black;
-    /*transform-origin: 100%; moves the hands into place*/
-}
 
-.sec-hand{
-   height: 5px;
-    width: 50%;
-    transform: rotate(90deg); /*puts the hand in 12 o clock start position*/
-    transform-origin: 100%; /*moves the complete axis to middle of clock-face*/
-}
-
-.min-hand {
     height: 5px;
-    width: 45%;
-    transform: translateX(15%);
-}
-.hour-hand {
-    height: 7px;
-    width: 40%;
-    transform: translateX(25%);
+    transform: rotate(90deg); /*puts the hand in 12 o clock initiali position*/
     background-color: black;
+    transform-origin: 100%; /*moves the complete axis to middle of clock-face*/
+
+    transition: all 0.2s cubic-bezier(0.34,-1.15, 0, 1.98);/*make hand ticks smooth*/
 }
+
