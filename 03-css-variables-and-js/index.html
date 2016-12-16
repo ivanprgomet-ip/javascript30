@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="container"> 
+        <h2>Playing with css variables and <span id="js-id">javascript</span></h2>
+        <img src="https://static.pexels.com/photos/6548/cold-snow-winter-mountain.jpeg" alt="mountains">
+        
+        
+        <div id="controls">
+            <h4>blur</h4>
+            <input type="range" name="blur">
+            <h4>spacing</h4>            
+            <input type="range" name="spacing">
+            <h4>color</h4>
+            <input type="color" name="color">
+        </div>
+    </div>
+</body>
+<style>
+    :root{
+        --maincolor:white;
+        --javascripty:rgb(255, 198, 0);
+        --commonpadding:25px;
+        --opacity-black:rgba(0, 0, 0, 0.4);
+        --blur: blur(5px);
+    }
+    #controls{
+        color: var(--javascripty);
+        padding-left: var(--commonpadding);
+        background: var(--opacity-black);
+    }
+    #controls h4{
+        margin: 0;
+    }
+    body{
+        margin: 0;
+           padding: 0;
+    }
+        #container{
+           
+           height: 100vh;
+           width: 100vw; 
+        }
+        #container img{
+            position: absolute;
+            top: 0;
+            z-index: -999;
+            height: 100%;
+            width: 100%;
+            
+            filter: var(--blur);
+
+            border: 5px solid var(--maincolor);/*avoid having the border overflow the parent when border pixels are added...*/
+            box-sizing: border-box; /*...by setting box-sizing:border-box so that the pixels are going inwards instead*/
+        }
+        #container h2{
+            color: var(--maincolor);
+            text-align: center;
+            margin: 0;
+            padding-top: var(--commonpadding);
+        }
+        #container h2 span{
+            color: var(--javascripty);
+        }
+    </style>
+
+</html>
