@@ -39,20 +39,25 @@ body{
     flex:1; /*every panel flex child will take up equal space to fill out parent*/
     display: flex;
     flex-direction: column;
-        transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+    transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+        
     background-position: center;
     background-size: cover;
 }
 .expanded{
     flex:3;    
+    font-size: 52px;
 }
 /*when the .panel contains the .expanded-active class, then we want the :firstchild to fall back into position*/
 .panel.expanded-active > :first-child{
     transform: translateY(0%);
+    font-size: 32px;
 }
 /*when the .panel contains the .expanded-active class, then we want the :lastchild to fall back into position*/
 .panel.expanded-active > :last-child{
     transform: translateY(0%);
+    font-size: 32px;
 }
 
 .show-text{
