@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet" type="text/css">
+
+<head>
+    <style>
+body{
+    margin: 0;
+    font-size: 32px;
+    overflow: hidden;
+}
+.panels{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vw;
+}
+.panel-one{
+    background: url('https://wallpaperscraft.com/image/nature_waterfall_summer_lake_trees_90400_1920x1080.jpg')
+}
+.panel-two{
+   background: url('http://eskipaper.com/images/frosty-wallpaper-hd-1.jpg')
+}
+.panel-three{
+    background: url('http://onehdwallpaper.com/wp-content/uploads/2015/07/Green-Nature-1080p-Wallpapers.jpg')
+}
+.panel-four{
+    /*for some reason backgroundposition center and backgroundsize cover doesnt make it if you set the background url 
+    inline on the panel directly, but if you set the background url separately for the panel (panel-one, panel-two etc. the 
+    backgorundsize and backgroundposition makes it. instead, if you want to have the background url inline, you must also specify
+    the backgorundsize and backgroundposition direclty in the inline style. eg. panel-four*/
+}
+.panel-five{
+    background: url('http://allpicts.in/download/1474/2015/01/full_hd_nature_wallpapers_1080p_desktop_green_landscape_with_flower-1600x900.jpg/')
+}
+
+.panel{
+    flex:1; /*every panel flex child will take up equal space to fill out parent*/
+    display: flex;
+    flex-direction: column;
+        transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    background-position: center;
+    background-size: cover;
+}
+.expanded{
+    flex:3;    
+}
+/*when the .panel contains the .expanded-active class, then we want the :firstchild to fall back into position*/
+.panel.expanded-active > :first-child{
+    transform: translateY(0%);
+}
+/*when the .panel contains the .expanded-active class, then we want the :lastchild to fall back into position*/
+.panel.expanded-active > :last-child{
+    transform: translateY(0%);
+}
+
+.show-text{
+    /*to divs (.panel > *:first-child,
+.panel > *:last-child) attach this show-text class*/
+    transform: translate(0%);
+}
+
+
+
+.panel div{
+    flex: 1; /*every div textpanel child will take up equal space to fill out parent*/
+    display: flex;
+    color: white;
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+    justify-content: center;
+    align-items: center;
+
+    text-transform: uppercase;
+    font-family: 'Amatic SC', cursive;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+    font-size: 2em;
+
+    transition: 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    
+}
+
+.panel > :first-child { transform: translateY(-100%); } /*moves all the top text panels outside*/
+.panel > :last-child {transform:translateY(100%)} /*moves all the bottom text panels outside*/
+
+</style>
+
+</head>
+
+<body>
+    <div class="panels">
+        <div class="panel panel-one">
+<div>this</div>
+<div>is</div>
+<div>nature</div>
+</div>
+<div class="panel panel-two">
+    <div>Sweet</div>
+    <div>Dreams</div>
+    <div>Hun</div>
+</div>
+<div class="panel panel-three">
+<div>bears</div>
+<div>are</div>
+<div>cool</div>
+</div>
+<div class="panel panel-four" style="background: url('http://wallpapercave.com/wp/0RSjFej.jpg'); background-position: center; background-size: cover;">
+<div>Are</div>
+<div>you</div>
+<div>Home Hun?</div>
+</div>
+<div class="panel panel-five">
+<div>into</div>
+<div>the</div>
+<div>wild</div>
+</div>
+</div>
+</body>
+<script>
+    function toggleExpanded() {
+        this.classList.toggle("expanded");
+    }
+     function toggleActive() {
+         this.classList.toggle("expanded-active")
+    }
+
+    var allPanels = document.getElementsByClassName("panel");
+
+    Array.from(allPanels).forEach(panel => panel.addEventListener('click', toggleExpanded)) //
+    Array.from(allPanels).forEach(panel => panel.addEventListener('transitionend', toggleActive)) //toggleactive runs as soon as the transition has ended
+</script>
+
+</html>
